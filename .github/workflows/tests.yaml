@@ -1,0 +1,54 @@
+name: tests
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'API base URL. Leave empty for production (https://factors.aperiodic.io, uses production credentials). Any other value (staging, preview deployments) runs with staging API key & Cloudflare credentials.'
+        required: false
+
+env:
+  PRODUCTION_URL: 'https://factors.aperiodic.io'
+
+jobs:
+  run-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+        python-version:
+          - "3.9"
+          - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+
+      - name: install-dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ".[tests]"
+
+      - name: run-tests
+        env:
+          APERIODIC_BASE_URL: ${{ inputs.base_url || env.PRODUCTION_URL }}
+          APERIODIC_API_KEY: ${{ inputs.base_url && inputs.base_url != env.PRODUCTION_URL && secrets.APERIODIC_API_KEY_STAGING || secrets.APERIODIC_API_KEY }}
+          CF_ACCESS_CLIENT_ID: ${{ inputs.base_url && inputs.base_url != env.PRODUCTION_URL && secrets.CF_ACCESS_CLIENT_ID || '' }}
+          CF_ACCESS_CLIENT_SECRET: ${{ inputs.base_url && inputs.base_url != env.PRODUCTION_URL && secrets.CF_ACCESS_CLIENT_SECRET || '' }}
+        run: pytest . -s --cov --durations 0
+
+      - uses: codecov/codecov-action@v3
