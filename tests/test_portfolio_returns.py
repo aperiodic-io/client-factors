@@ -3,7 +3,7 @@ Tests for portfolio returns API endpoint.
 """
 
 import pandas as pd
-from aperiodic import get_portfolio_returns
+from aperiodic_factors import get_portfolio_returns
 
 
 def test_get_portfolio_returns_success(api_key, test_portfolio):

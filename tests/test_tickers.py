@@ -2,7 +2,7 @@
 Tests for tickers API endpoint.
 """
 
-from aperiodic import get_tickers
+from aperiodic_factors import get_tickers
 
 
 def test_get_tickers_success(api_key, test_portfolio_base):

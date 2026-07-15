@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 import pytest
 import requests
-from aperiodic import get_portfolio_historical_weights
+from aperiodic_factors import get_portfolio_historical_weights
 
 
 def test_get_portfolio_historical_weights_success(api_key, test_portfolio):

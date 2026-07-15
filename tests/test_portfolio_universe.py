@@ -5,7 +5,7 @@ Tests for universe API endpoint.
 import pandas as pd
 import pytest
 import requests
-from aperiodic import get_historical_universe
+from aperiodic_factors import get_historical_universe
 
 
 def test_get_historical_universe_different_sizes(api_key):

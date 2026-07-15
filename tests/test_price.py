@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 import pandas as pd
 import requests
-from aperiodic import get_price, get_prices
+from aperiodic_factors import get_price, get_prices
 
 
 def test_get_price_success(api_key):

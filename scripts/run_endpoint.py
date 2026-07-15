@@ -8,7 +8,7 @@ from typing import Any, Callable
 
 import pandas as pd
 
-from aperiodic import (
+from aperiodic_factors import (
     get_historical_universe,
     get_live_weights,
     get_portfolio_factors_historical,
@@ -212,7 +212,7 @@ def print_result(result: Any) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Run a sample call for any exported aperiodic endpoint.",
+        description="Run a sample call for any exported aperiodic_factors endpoint.",
     )
     parser.add_argument(
         "--endpoint",

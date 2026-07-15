@@ -2,7 +2,7 @@
 Tests for portfolio factors historical API endpoint.
 """
 import pandas as pd
-from aperiodic import get_portfolio_factors_historical, get_tickers
+from aperiodic_factors import get_portfolio_factors_historical, get_tickers
 
 
 def test_get_portfolio_factors_historical_success(

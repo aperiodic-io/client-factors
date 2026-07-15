@@ -33,7 +33,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 
 [tool.hatch.version]
-path = "src/aperiodic/__init__.py"
+path = "src/aperiodic_factors/__init__.py"
 
 
 [project.urls]
@@ -94,7 +94,7 @@ run = "pytest tests/ --durations 0 -s"
 profile = "black"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/aperiodic"]
+packages = ["src/aperiodic_factors"]
 
 [tool.hatch.build.targets.sdist]
 exclude = [

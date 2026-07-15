@@ -2,7 +2,7 @@
 Tests for portfolio factors live API endpoint.
 """
 import pandas as pd
-from aperiodic import get_portfolio_factors_live, get_tickers
+from aperiodic_factors import get_portfolio_factors_live, get_tickers
 
 
 def test_get_portfolio_factors_live_success(

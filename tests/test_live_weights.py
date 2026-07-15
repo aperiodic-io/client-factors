@@ -2,7 +2,7 @@
 Tests for live weights API endpoint.
 """
 import pandas as pd
-from aperiodic import get_live_weights
+from aperiodic_factors import get_live_weights
 
 
 def test_get_live_weights_success(api_key, test_portfolio):

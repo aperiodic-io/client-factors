@@ -4,7 +4,7 @@ Tests for risk API endpoints.
 
 import pandas as pd
 
-from aperiodic import (
+from aperiodic_factors import (
     get_risk_overlay,
     get_risk_overlay_live,
     get_risk_regime,

@@ -20,13 +20,13 @@ pip install aperiodic-factors
 ## Quick Start
 
 ```python
-import aperiodic
+import aperiodic_factors
 
 # Set your API key
 api_key = "your-api-key-here"
 
 # Get historical portfolio weights
-historical_weights = aperiodic.get_portfolio_historical_weights(
+historical_weights = aperiodic_factors.get_portfolio_historical_weights(
     id="your-portfolio-id",
     api_key=api_key,
     start_date="2024-01-01",
@@ -34,41 +34,41 @@ historical_weights = aperiodic.get_portfolio_historical_weights(
 )
 
 # Get current portfolio weights
-live_weights = aperiodic.get_live_weights(
+live_weights = aperiodic_factors.get_live_weights(
     id="your-portfolio-id",
     api_key=api_key,
 )
 
 # Get portfolio returns
-returns = aperiodic.get_portfolio_returns(
+returns = aperiodic_factors.get_portfolio_returns(
     id="your-portfolio-id",
     api_key=api_key,
     start_date="2024-01-01",
 )
 
 # Get portfolio tickers
-tickers = aperiodic.get_tickers(
+tickers = aperiodic_factors.get_tickers(
     id="momentum",  # Portfolio factor identifier without universe specifier
     api_key=api_key,
     universe_size="full",
 )
 
 # Get historical factors
-factors = aperiodic.get_portfolio_factors_historical(
+factors = aperiodic_factors.get_portfolio_factors_historical(
     id="momentum",
     tickers=["BTC", "ETH"],
     api_key=api_key,
 )
 
 # Get live factors (latest factor data)
-live_factors = aperiodic.get_portfolio_factors_live(
+live_factors = aperiodic_factors.get_portfolio_factors_live(
     id="momentum",
     tickers=["BTC", "ETH"],
     api_key=api_key,
 )
 
 # Get historical universe
-universe = aperiodic.get_historical_universe(
+universe = aperiodic_factors.get_historical_universe(
     size="full",
     start_date="2024-01-01",
     end_date="2024-12-31",
