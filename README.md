@@ -7,7 +7,7 @@ portfolio weights/returns and risk signals.
 ## Installation
 
 ```bash
-pip install aperiodic-factors-client
+pip install aperiodic-factors
 ```
 
 ## Features

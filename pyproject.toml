@@ -3,7 +3,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [project]
-name = "aperiodic-factors-client"
+name = "aperiodic-factors"
 version = "0.1.0"
 authors = [
   { name = "Aperiodic Factors" },
@@ -72,7 +72,7 @@ push = false
 
 [tool.hatch.envs.quality]
 dependencies = [
-  "aperiodic-factors-client[quality]"
+  "aperiodic-factors[quality]"
 ]
 detached = true
 
@@ -85,7 +85,7 @@ format = [
 ]
 
 [tool.hatch.envs.test]
-dependencies = ["aperiodic-factors-client[tests]"]
+dependencies = ["aperiodic-factors[tests]"]
 
 [tool.hatch.envs.test.scripts]
 run = "pytest tests/ --durations 0 -s"

@@ -1,5 +1,5 @@
 """
-Shared fixtures for aperiodic-factors-client tests.
+Shared fixtures for aperiodic-factors tests.
 """
 import os
 
