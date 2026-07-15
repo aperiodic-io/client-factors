@@ -4,7 +4,7 @@ requires = ["hatchling"]
 
 [project]
 name = "aperiodic-factors"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name = "Aperiodic Factors" },
 ]
@@ -55,7 +55,7 @@ tests = [
 
 # bumpver command: ``bumpver update --patch``
 [tool.bumpver]
-current_version = "0.1.0"
+current_version = "0.1.1"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "chore(Release): Bump version from {old_version} -> {new_version}"
 commit = true
